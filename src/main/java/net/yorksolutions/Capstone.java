@@ -17,7 +17,6 @@ import org.apache.beam.sdk.options.PipelineOptionsFactory;
 import org.apache.beam.runners.dataflow.options.DataflowPipelineOptions;
 import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO;
 import org.apache.beam.sdk.values.PCollection;
-
 import com.google.api.services.bigquery.model.TableRow;
 import java.util.Arrays;
 
@@ -83,14 +82,14 @@ public class Capstone {
         rows1.apply(
             "Write to BigQuery 1",
             BigQueryIO.writeTableRows()
-                .to(String.format("york-cdf-start:final_taylor_bell.cust_tier_code-sku-total_no_of_product_views"))
+                .to("york-cdf-start:final_taylor_bell.cust_tier_code-sku-total_no_of_product_views")
                 .withSchema(schema1)
                 .withCreateDisposition(BigQueryIO.Write.CreateDisposition.CREATE_IF_NEEDED)
                 .withWriteDisposition(BigQueryIO.Write.WriteDisposition.WRITE_TRUNCATE));
         rows2.apply(
             "Write to BigQuery 2",
             BigQueryIO.writeTableRows()
-                .to(String.format("york-cdf-start:final_taylor_bell.cust_tier_code-sku-total_sales_amount"))
+                .to("york-cdf-start:final_taylor_bell.cust_tier_code-sku-total_sales_amount")
                 .withSchema(schema2)
                 .withCreateDisposition(BigQueryIO.Write.CreateDisposition.CREATE_IF_NEEDED)
                 .withWriteDisposition(BigQueryIO.Write.WriteDisposition.WRITE_TRUNCATE));

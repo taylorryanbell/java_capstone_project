@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>pipelinetesting11</artifactId>
+    <groupId>net.yorksolutions</groupId>
+    <artifactId>java_capstone_project</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -14,6 +14,8 @@
     </properties>
 
     <repositories>
+
+        <!-- Add Maven confluent repo just in case -->
         <repository>
             <id>confluent</id>
             <url>http://packages.confluent.io/maven/</url>
@@ -29,6 +31,7 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- Google Cloud Libraries -->
             <dependency>
                 <groupId>com.google.cloud</groupId>
                 <artifactId>libraries-bom</artifactId>
@@ -40,50 +43,83 @@
     </dependencyManagement>
 
     <dependencies>
+
+        <!-- Apache Beam Java Core -->
         <dependency>
             <groupId>org.apache.beam</groupId>
             <artifactId>beam-sdks-java-core</artifactId>
             <version>2.35.0</version>
         </dependency>
+
+        <!-- Apache Beam Direct Runner -->
         <dependency>
             <groupId>org.apache.beam</groupId>
             <artifactId>beam-runners-direct-java</artifactId>
             <version>2.35.0</version>
             <scope>runtime</scope>
         </dependency>
+
+        <!-- Apache Beam Dataflow Runner -->
         <dependency>
             <groupId>org.apache.beam</groupId>
             <artifactId>beam-runners-google-cloud-dataflow-java</artifactId>
             <version>2.35.0</version>
         </dependency>
+
+        <!-- Apache Beam IO for GCP -->
         <dependency>
             <groupId>org.apache.beam</groupId>
             <artifactId>beam-sdks-java-io-google-cloud-platform</artifactId>
             <version>2.35.0</version>
         </dependency>
+
+        <!-- Apache Beam Extensions for GCP -->
         <dependency>
             <groupId>org.apache.beam</groupId>
             <artifactId>beam-sdks-java-extensions-google-cloud-platform-core</artifactId>
             <version>2.35.0</version>
         </dependency>
+
+        <!-- Google Cloud Storage -->
         <dependency>
             <groupId>com.google.cloud</groupId>
             <artifactId>google-cloud-storage</artifactId>
         </dependency>
+
+        <!-- Apache Beam Java Examples -->
         <dependency>
             <groupId>org.apache.beam</groupId>
             <artifactId>beam-examples-java</artifactId>
             <version>2.35.0</version>
         </dependency>
+
+        <!-- SLF4J Logging API -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.6.2</version>
+            <version>1.7.32</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.6.2</version>
+            <version>1.7.32</version>
+        </dependency>
+
+        <!-- Jackson API -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.13.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.13.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.13.1</version>
         </dependency>
     </dependencies>
 

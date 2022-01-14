@@ -27,7 +27,7 @@ public class Capstone {
 
         // setting pipeline options to use Google Dataflow Runner
         DataflowPipelineOptions pipelineOptions = PipelineOptionsFactory.as(DataflowPipelineOptions.class);
-        pipelineOptions.setJobName("final-taylor-bell-java");
+        pipelineOptions.setJobName("final-taylor-bell-java-jenkins");
         pipelineOptions.setProject("york-cdf-start");
         pipelineOptions.setRegion("us-central1");
         pipelineOptions.setRunner(DataflowRunner.class);
